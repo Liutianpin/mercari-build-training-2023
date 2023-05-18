@@ -8,8 +8,7 @@ copy python python
 copy db db
 RUN apk update && apk add --no-cache sqlite
 
-RUN cd python\
-    &&pip install --no-cache requirements.txt
+RUN cd python && pip install --no-cache-dir -r requirements.txt
 
 RUN chown -R trainee:mercari /home/trainee/db
 USER trainee
