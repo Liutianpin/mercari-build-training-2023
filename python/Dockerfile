@@ -7,7 +7,7 @@ WORKDIR $project_dir
 copy python python
 copy db db
 RUN apk update && apk add --no-cache sqlite
-RUN pip install --upgrade pip
+RUN python -m pip install --upgrade pip
 RUN cd python && pip install --no-cache-dir -r requirements.txt
 
 RUN chown -R trainee:mercari /home/trainee/db
