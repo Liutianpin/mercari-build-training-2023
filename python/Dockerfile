@@ -6,8 +6,7 @@ ENV project_dir=/home/trainee
 WORKDIR $project_dir
 copy python python
 copy db db
-RUN apk-get update\
-    && apk add --no-cache sqlite
+RUN apk update && apk add --no-cache sqlite
 
 RUN cd python\
     &&pip install --no-cache requirements.txt
