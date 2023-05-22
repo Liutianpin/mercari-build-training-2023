@@ -4,8 +4,8 @@ RUN addgroup -S mercari && adduser -S trainee -G mercari
 # RUN chown -R trainee:mercari /path/to/db
 ENV project_dir=/home/trainee
 WORKDIR $project_dir
-copy python python
-copy db db
+COPY python python
+COPY db db
 RUN apk add --no-cache python3
 RUN apk update && apk add --no-cache sqlite
 RUN python -m pip install --upgrade pip
